@@ -3,87 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VFG Store</title>
+<title>MAXI STORE | Recargas Free Fire</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Montserrat',sans-serif;
-background:radial-gradient(circle at top,#0f0f1a,#000);
+background:#000;
 color:#fff;
 overflow-x:hidden;
 }
 
+/* Fondo azul glow */
 body::before{
 content:"";
 position:fixed;
-width:200%;
-height:200%;
-background:linear-gradient(45deg,#00f0ff20,#ff00c820,#00ff8820);
-animation:moverFondo 12s linear infinite;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:radial-gradient(circle at 50% 0%, #00bfff20, transparent 60%);
 z-index:-1;
 }
 
-@keyframes moverFondo{
-0%{transform:translate(-25%,-25%) rotate(0deg);}
-100%{transform:translate(-25%,-25%) rotate(360deg);}
-}
-
+/* HEADER */
 header{
 text-align:center;
-padding:60px 20px 30px;
-animation:fadeIn 1s ease;
+padding:50px 20px 30px;
 }
-
-header h1{
-font-family:'Orbitron',sans-serif;
-font-size:36px;
-letter-spacing:4px;
-background:linear-gradient(90deg,#00f0ff,#ff00c8);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-margin-top:20px;
-}
-
-header p{opacity:0.7;margin-top:10px;font-size:14px;}
 
 .logo img{
-width:200px;
-filter:drop-shadow(0 0 15px #00f0ff);
-transition:0.4s;
+width:260px;
+filter:drop-shadow(0 0 25px #00bfff);
 }
 
-.logo img:hover{
-transform:scale(1.08);
-filter:drop-shadow(0 0 25px #ff00c8);
+.subtitle{
+margin-top:15px;
+font-size:14px;
+letter-spacing:2px;
+color:#aaa;
 }
 
-.container{width:90%;max-width:1200px;margin:40px auto;}
+/* CONTENEDOR */
+.container{
+width:92%;
+max-width:1200px;
+margin:40px auto;
+}
 
+/* TITULOS */
 .section-title{
 font-family:'Orbitron',sans-serif;
-font-size:20px;
+font-size:22px;
 margin:60px 0 25px;
-border-left:4px solid #00f0ff;
-padding-left:12px;
-letter-spacing:2px;
+color:#00bfff;
+letter-spacing:3px;
+text-shadow:0 0 10px #00bfff;
 }
 
+/* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
 gap:25px;
 }
 
+/* CARD */
 .card{
-background:rgba(20,20,30,0.8);
+background:linear-gradient(145deg,#0a0f1a,#05080f);
+border:1px solid #0f2a40;
 padding:25px;
-border-radius:16px;
-border:1px solid #222;
-backdrop-filter:blur(10px);
+border-radius:18px;
 transition:0.3s;
 position:relative;
 overflow:hidden;
@@ -91,38 +84,45 @@ overflow:hidden;
 
 .card:hover{
 transform:translateY(-8px);
-border:1px solid #00f0ff;
-box-shadow:0 0 20px #00f0ff50;
+border:1px solid #00bfff;
+box-shadow:0 0 25px #00bfff50;
 }
 
-.card h3{font-size:18px;margin-bottom:10px;}
+.card h3{
+font-family:'Orbitron';
+font-size:18px;
+margin-bottom:10px;
+}
 
 .price{
-font-size:20px;
+font-size:22px;
 font-weight:700;
+color:#00d4ff;
 margin-bottom:15px;
-color:#00f0ff;
+text-shadow:0 0 10px #00bfff;
 }
 
+/* BOTON */
 button{
 width:100%;
 padding:12px;
 border:none;
-border-radius:10px;
-background:linear-gradient(90deg,#00f0ff,#ff00c8);
-color:#000;
+border-radius:12px;
+background:linear-gradient(90deg,#00bfff,#008cff);
+color:white;
 font-weight:700;
 cursor:pointer;
 transition:0.3s;
-font-family:'Orbitron',sans-serif;
+font-family:'Orbitron';
 letter-spacing:1px;
 }
 
 button:hover{
 transform:scale(1.05);
-box-shadow:0 0 15px #ff00c8;
+box-shadow:0 0 15px #00bfff;
 }
 
+/* MODAL */
 .modal{
 display:none;
 position:fixed;
@@ -137,21 +137,27 @@ z-index:9999;
 }
 
 .modal-content{
-background:#111;
+background:#0a0f1a;
 padding:30px;
-border-radius:16px;
+border-radius:20px;
 width:90%;
 max-width:400px;
-border:1px solid #00f0ff;
-animation:fadeIn 0.4s ease;
+border:1px solid #00bfff;
+box-shadow:0 0 30px #00bfff40;
 }
 
-input, select{
+.modal-content h3{
+font-family:'Orbitron';
+margin-bottom:15px;
+color:#00d4ff;
+}
+
+input,select{
 width:100%;
 padding:10px;
 margin-top:10px;
-border-radius:8px;
-border:1px solid #333;
+border-radius:10px;
+border:1px solid #0f2a40;
 background:#000;
 color:white;
 }
@@ -163,9 +169,12 @@ margin-bottom:10px;
 color:#aaa;
 }
 
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(20px);}
-to{opacity:1; transform:translateY(0);}
+/* Footer */
+footer{
+text-align:center;
+margin:80px 0 20px;
+font-size:13px;
+color:#555;
 }
 </style>
 </head>
@@ -174,15 +183,14 @@ to{opacity:1; transform:translateY(0);}
 
 <header>
 <div class="logo">
-<img src="logo.png">
+<img src="logo1.jpg">
 </div>
-<h1>RECARGAS FF 2026</h1>
-<p>ENTREGA INMEDIATA ⚡ 100% SEGURO</p>
+<div class="subtitle">RECARGAS FREE FIRE • ENTREGA INMEDIATA ⚡</div>
 </header>
 
 <div class="container">
 
-<div class="section-title">STOCK ⚡</div>
+<div class="section-title">💎 DIAMANTES STOCK</div>
 <div class="grid">
 
 <div class="card"><h3>110 💎</h3><div class="price">$1230 ARS</div><button onclick="abrirModal('110 💎 STOCK','1230')">COMPRAR</button></div>
@@ -194,7 +202,7 @@ to{opacity:1; transform:translateY(0);}
 
 </div>
 
-<div class="section-title">PRECIOS INFINITOS ♾️</div>
+<div class="section-title">♾️ PRECIOS INFINITOS</div>
 <div class="grid">
 
 <div class="card"><h3>110 💎</h3><div class="price">$1780 ARS</div><button onclick="abrirModal('110 💎 INFINITO','1780')">COMPRAR</button></div>
@@ -206,7 +214,7 @@ to{opacity:1; transform:translateY(0);}
 
 </div>
 
-<div class="section-title">TARJETAS Y PASES 🎫</div>
+<div class="section-title">🎫 TARJETAS Y PASES</div>
 <div class="grid">
 
 <div class="card"><h3>Tarjeta Semanal Básica</h3><div class="price">$1450 ARS</div><button onclick="abrirModal('Tarjeta Semanal Básica','1450')">COMPRAR</button></div>
@@ -217,60 +225,16 @@ to{opacity:1; transform:translateY(0);}
 <div class="card"><h3>Pase Booyah</h3><div class="price">$2500 ARS</div><button onclick="abrirModal('Pase Booyah','2500')">COMPRAR</button></div>
 
 </div>
+
 </div>
 
-<div class="modal" id="modal">
-<div class="modal-content">
-<div class="close" onclick="cerrarModal()">X</div>
-<h3>FINALIZAR PEDIDO</h3>
-<p id="productoSeleccionado"></p>
-<input type="text" id="playerID" placeholder="Ingrese ID del jugador">
-<select id="metodoPago">
-<option value="">Seleccione método de pago</option>
-<option>Transferencia</option>
-<option>Mercado Pago</option>
-<option>USDT</option>
-</select>
-<button onclick="enviarPedido()">ENVIAR PEDIDO</button>
-</div>
-</div>
+<footer>
+© 2026 MAXI STORE - Todos los derechos reservados
+</footer>
 
 <script>
-let producto="";
-let precio="";
-
-function abrirModal(prod,pre){
-producto=prod;
-precio=pre;
-document.getElementById("productoSeleccionado").innerHTML=
-"<strong>Producto:</strong> "+prod+"<br><strong>Precio:</strong> $"+pre+" ARS";
-document.getElementById("modal").style.display="flex";
-}
-
-function cerrarModal(){
-document.getElementById("modal").style.display="none";
-}
-
-function enviarPedido(){
-let id=document.getElementById("playerID").value;
-let metodo=document.getElementById("metodoPago").value;
-
-if(id===""||metodo===""){
-alert("Complete todos los campos");
-return;
-}
-
-let mensaje=
-"🛒 NUEVO PEDIDO RECARGAS FF 2026\n\n"+
-"💎 Producto: "+producto+"\n"+
-"💵 Precio: $"+precio+" ARS\n"+
-"🆔 ID: "+id+"\n"+
-"💳 Pago: "+metodo;
-
-let numero="5493435440092";
-let url="https://wa.me/"+numero+"?text="+encodeURIComponent(mensaje);
-window.open(url,'_blank');
-}
+let producto="",precio="";
+function abrirModal(p,pr){producto=p;precio=pr;alert("Producto seleccionado: "+p);}
 </script>
 
 </body>
