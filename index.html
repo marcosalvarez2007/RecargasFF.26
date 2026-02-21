@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAXI STORE | Recargas Free Fire</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -17,32 +18,33 @@ color:#fff;
 overflow-x:hidden;
 }
 
-/* Fondo azul glow */
+/* Fondo glow azul */
 body::before{
 content:"";
 position:fixed;
-top:0;
-left:0;
 width:100%;
 height:100%;
-background:radial-gradient(circle at 50% 0%, #00bfff20, transparent 60%);
+background:radial-gradient(circle at top,#00bfff20,transparent 60%);
 z-index:-1;
 }
 
 /* HEADER */
 header{
 text-align:center;
-padding:50px 20px 30px;
+padding:35px 15px 10px;
 }
 
+/* LOGO RECORTADO Y CHICO */
 .logo img{
-width:260px;
-filter:drop-shadow(0 0 25px #00bfff);
+width:160px; /* tamaño chico */
+height:auto;
+object-fit:contain;
+filter:drop-shadow(0 0 15px #00bfff);
+margin-bottom:10px;
 }
 
 .subtitle{
-margin-top:15px;
-font-size:14px;
+font-size:13px;
 letter-spacing:2px;
 color:#aaa;
 }
@@ -50,76 +52,72 @@ color:#aaa;
 /* CONTENEDOR */
 .container{
 width:92%;
-max-width:1200px;
-margin:40px auto;
+max-width:1100px;
+margin:30px auto;
 }
 
 /* TITULOS */
 .section-title{
 font-family:'Orbitron',sans-serif;
-font-size:22px;
-margin:60px 0 25px;
+font-size:20px;
+margin:50px 0 20px;
 color:#00bfff;
-letter-spacing:3px;
-text-shadow:0 0 10px #00bfff;
+letter-spacing:2px;
+text-shadow:0 0 8px #00bfff;
 }
 
 /* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:18px;
 }
 
 /* CARD */
 .card{
 background:linear-gradient(145deg,#0a0f1a,#05080f);
 border:1px solid #0f2a40;
-padding:25px;
-border-radius:18px;
+padding:20px;
+border-radius:15px;
 transition:0.3s;
-position:relative;
-overflow:hidden;
 }
 
 .card:hover{
-transform:translateY(-8px);
+transform:translateY(-6px);
 border:1px solid #00bfff;
-box-shadow:0 0 25px #00bfff50;
+box-shadow:0 0 20px #00bfff40;
 }
 
 .card h3{
 font-family:'Orbitron';
-font-size:18px;
-margin-bottom:10px;
+font-size:17px;
+margin-bottom:8px;
 }
 
 .price{
-font-size:22px;
+font-size:19px;
 font-weight:700;
 color:#00d4ff;
-margin-bottom:15px;
-text-shadow:0 0 10px #00bfff;
+margin-bottom:12px;
 }
 
 /* BOTON */
 button{
 width:100%;
-padding:12px;
+padding:10px;
 border:none;
-border-radius:12px;
+border-radius:10px;
 background:linear-gradient(90deg,#00bfff,#008cff);
 color:white;
 font-weight:700;
 cursor:pointer;
 transition:0.3s;
 font-family:'Orbitron';
-letter-spacing:1px;
 }
 
 button:hover{
 transform:scale(1.05);
-box-shadow:0 0 15px #00bfff;
+box-shadow:0 0 12px #00bfff;
 }
 
 /* MODAL */
@@ -138,25 +136,24 @@ z-index:9999;
 
 .modal-content{
 background:#0a0f1a;
-padding:30px;
-border-radius:20px;
+padding:25px;
+border-radius:15px;
 width:90%;
-max-width:400px;
+max-width:350px;
 border:1px solid #00bfff;
-box-shadow:0 0 30px #00bfff40;
 }
 
 .modal-content h3{
 font-family:'Orbitron';
-margin-bottom:15px;
+margin-bottom:10px;
 color:#00d4ff;
 }
 
 input,select{
 width:100%;
-padding:10px;
+padding:8px;
 margin-top:10px;
-border-radius:10px;
+border-radius:8px;
 border:1px solid #0f2a40;
 background:#000;
 color:white;
@@ -165,15 +162,16 @@ color:white;
 .close{
 text-align:right;
 cursor:pointer;
-margin-bottom:10px;
 color:#aaa;
+margin-bottom:8px;
+font-size:14px;
 }
 
 /* Footer */
 footer{
 text-align:center;
-margin:80px 0 20px;
-font-size:13px;
+margin:50px 0 20px;
+font-size:12px;
 color:#555;
 }
 </style>
@@ -183,7 +181,7 @@ color:#555;
 
 <header>
 <div class="logo">
-<img src="logo1.png">
+<img src="logo1.png" alt="MAXI STORE">
 </div>
 <div class="subtitle">RECARGAS FREE FIRE • ENTREGA INMEDIATA ⚡</div>
 </header>
@@ -192,49 +190,71 @@ color:#555;
 
 <div class="section-title">💎 DIAMANTES STOCK</div>
 <div class="grid">
-
-<div class="card"><h3>110 💎</h3><div class="price">$1230 ARS</div><button onclick="abrirModal('110 💎 STOCK','1230')">COMPRAR</button></div>
-<div class="card"><h3>341 💎</h3><div class="price">$3700 ARS</div><button onclick="abrirModal('341 💎 STOCK','3700')">COMPRAR</button></div>
-<div class="card"><h3>572 💎</h3><div class="price">$5500 ARS</div><button onclick="abrirModal('572 💎 STOCK','5500')">COMPRAR</button></div>
-<div class="card"><h3>1166 💎</h3><div class="price">$10870 ARS</div><button onclick="abrirModal('1166 💎 STOCK','10870')">COMPRAR</button></div>
-<div class="card"><h3>2398 💎</h3><div class="price">$20370 ARS</div><button onclick="abrirModal('2398 💎 STOCK','20370')">COMPRAR</button></div>
-<div class="card"><h3>6160 💎</h3><div class="price">$51130 ARS</div><button onclick="abrirModal('6160 💎 STOCK','51130')">COMPRAR</button></div>
+<div class="card"><h3>110 💎</h3><div class="price">$1230</div><button onclick="abrirModal('110 💎 STOCK','1230')">COMPRAR</button></div>
+<div class="card"><h3>341 💎</h3><div class="price">$3700</div><button onclick="abrirModal('341 💎 STOCK','3700')">COMPRAR</button></div>
+<div class="card"><h3>572 💎</h3><div class="price">$5500</div><button onclick="abrirModal('572 💎 STOCK','5500')">COMPRAR</button></div>
+</div>
 
 </div>
 
-<div class="section-title">♾️ PRECIOS INFINITOS</div>
-<div class="grid">
-
-<div class="card"><h3>110 💎</h3><div class="price">$1780 ARS</div><button onclick="abrirModal('110 💎 INFINITO','1780')">COMPRAR</button></div>
-<div class="card"><h3>341 💎</h3><div class="price">$5500 ARS</div><button onclick="abrirModal('341 💎 INFINITO','5500')">COMPRAR</button></div>
-<div class="card"><h3>572 💎</h3><div class="price">$7760 ARS</div><button onclick="abrirModal('572 💎 INFINITO','7760')">COMPRAR</button></div>
-<div class="card"><h3>1166 💎</h3><div class="price">$13970 ARS</div><button onclick="abrirModal('1166 💎 INFINITO','13970')">COMPRAR</button></div>
-<div class="card"><h3>2398 💎</h3><div class="price">$25330 ARS</div><button onclick="abrirModal('2398 💎 INFINITO','25330')">COMPRAR</button></div>
-<div class="card"><h3>6160 💎</h3><div class="price">$62350 ARS</div><button onclick="abrirModal('6160 💎 INFINITO','62350')">COMPRAR</button></div>
-
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<div class="close" onclick="cerrarModal()">Cerrar ✖</div>
+<h3>FINALIZAR PEDIDO</h3>
+<p id="productoSeleccionado"></p>
+<input type="text" id="playerID" placeholder="Ingrese ID del jugador">
+<select id="metodoPago">
+<option value="">Método de pago</option>
+<option>Transferencia</option>
+<option>Mercado Pago</option>
+<option>USDT</option>
+</select>
+<button onclick="enviarPedido()">ENVIAR PEDIDO</button>
 </div>
-
-<div class="section-title">🎫 TARJETAS Y PASES</div>
-<div class="grid">
-
-<div class="card"><h3>Tarjeta Semanal Básica</h3><div class="price">$1450 ARS</div><button onclick="abrirModal('Tarjeta Semanal Básica','1450')">COMPRAR</button></div>
-<div class="card"><h3>Tarjeta Semanal</h3><div class="price">$3680 ARS</div><button onclick="abrirModal('Tarjeta Semanal','3680')">COMPRAR</button></div>
-<div class="card"><h3>Tarjeta Mensual</h3><div class="price">$14500 ARS</div><button onclick="abrirModal('Tarjeta Mensual','14500')">COMPRAR</button></div>
-<div class="card"><h3>Evo Pase 7 Días</h3><div class="price">$2500 ARS</div><button onclick="abrirModal('Evo Pase 7 Días','2500')">COMPRAR</button></div>
-<div class="card"><h3>Evo Pase 30 Días</h3><div class="price">$5900 ARS</div><button onclick="abrirModal('Evo Pase 30 Días','5900')">COMPRAR</button></div>
-<div class="card"><h3>Pase Booyah</h3><div class="price">$2500 ARS</div><button onclick="abrirModal('Pase Booyah','2500')">COMPRAR</button></div>
-
-</div>
-
 </div>
 
 <footer>
-© 2026 MAXI STORE - Todos los derechos reservados
+© 2026 MAXI STORE
 </footer>
 
 <script>
-let producto="",precio="";
-function abrirModal(p,pr){producto=p;precio=pr;alert("Producto seleccionado: "+p);}
+let producto="";
+let precio="";
+
+function abrirModal(prod,pre){
+producto=prod;
+precio=pre;
+document.getElementById("productoSeleccionado").innerHTML=
+"<strong>Producto:</strong> "+prod+"<br><strong>Precio:</strong> $"+pre;
+document.getElementById("modal").style.display="flex";
+}
+
+function cerrarModal(){
+document.getElementById("modal").style.display="none";
+}
+
+function enviarPedido(){
+let id=document.getElementById("playerID").value;
+let metodo=document.getElementById("metodoPago").value;
+
+if(id===""||metodo===""){
+alert("Complete todos los campos");
+return;
+}
+
+let mensaje=
+"🛒 NUEVO PEDIDO MAXI STORE\n\n"+
+"💎 Producto: "+producto+"\n"+
+"💵 Precio: $"+precio+"\n"+
+"🆔 ID: "+id+"\n"+
+"💳 Pago: "+metodo;
+
+let numero="5493865267742"; // Cambia por tu número
+let url="https://wa.me/"+numero+"?text="+encodeURIComponent(mensaje);
+
+window.open(url,'_blank');
+}
 </script>
 
 </body>
