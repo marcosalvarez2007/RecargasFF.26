@@ -18,7 +18,6 @@ color:#fff;
 overflow-x:hidden;
 }
 
-/* Fondo glow azul */
 body::before{
 content:"";
 position:fixed;
@@ -28,15 +27,13 @@ background:radial-gradient(circle at top,#00bfff20,transparent 60%);
 z-index:-1;
 }
 
-/* HEADER */
 header{
 text-align:center;
 padding:35px 15px 10px;
 }
 
-/* LOGO RECORTADO Y CHICO */
-.logo img{
-width:160px; /* tamaño chico */
+.logo1 img{
+width:160px;
 height:auto;
 object-fit:contain;
 filter:drop-shadow(0 0 15px #00bfff);
@@ -49,14 +46,12 @@ letter-spacing:2px;
 color:#aaa;
 }
 
-/* CONTENEDOR */
 .container{
 width:92%;
 max-width:1100px;
 margin:30px auto;
 }
 
-/* TITULOS */
 .section-title{
 font-family:'Orbitron',sans-serif;
 font-size:20px;
@@ -66,14 +61,12 @@ letter-spacing:2px;
 text-shadow:0 0 8px #00bfff;
 }
 
-/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
 gap:18px;
 }
 
-/* CARD */
 .card{
 background:linear-gradient(145deg,#0a0f1a,#05080f);
 border:1px solid #0f2a40;
@@ -101,7 +94,6 @@ color:#00d4ff;
 margin-bottom:12px;
 }
 
-/* BOTON */
 button{
 width:100%;
 padding:10px;
@@ -120,7 +112,6 @@ transform:scale(1.05);
 box-shadow:0 0 12px #00bfff;
 }
 
-/* MODAL */
 .modal{
 display:none;
 position:fixed;
@@ -167,7 +158,6 @@ margin-bottom:8px;
 font-size:14px;
 }
 
-/* Footer */
 footer{
 text-align:center;
 margin:50px 0 20px;
@@ -193,11 +183,33 @@ color:#555;
 <div class="card"><h3>110 💎</h3><div class="price">$1230</div><button onclick="abrirModal('110 💎 STOCK','1230')">COMPRAR</button></div>
 <div class="card"><h3>341 💎</h3><div class="price">$3700</div><button onclick="abrirModal('341 💎 STOCK','3700')">COMPRAR</button></div>
 <div class="card"><h3>572 💎</h3><div class="price">$5500</div><button onclick="abrirModal('572 💎 STOCK','5500')">COMPRAR</button></div>
+<div class="card"><h3>1166 💎</h3><div class="price">$10870</div><button onclick="abrirModal('1166 💎 STOCK','10870')">COMPRAR</button></div>
+<div class="card"><h3>2398 💎</h3><div class="price">$20370</div><button onclick="abrirModal('2398 💎 STOCK','20370')">COMPRAR</button></div>
+<div class="card"><h3>6160 💎</h3><div class="price">$51130</div><button onclick="abrirModal('6160 💎 STOCK','51130')">COMPRAR</button></div>
+</div>
+
+<div class="section-title">♾️ PRECIOS INFINITOS</div>
+<div class="grid">
+<div class="card"><h3>110 💎</h3><div class="price">$1780</div><button onclick="abrirModal('110 💎 INFINITO','1780')">COMPRAR</button></div>
+<div class="card"><h3>341 💎</h3><div class="price">$5500</div><button onclick="abrirModal('341 💎 INFINITO','5500')">COMPRAR</button></div>
+<div class="card"><h3>572 💎</h3><div class="price">$7760</div><button onclick="abrirModal('572 💎 INFINITO','7760')">COMPRAR</button></div>
+<div class="card"><h3>1166 💎</h3><div class="price">$13970</div><button onclick="abrirModal('1166 💎 INFINITO','13970')">COMPRAR</button></div>
+<div class="card"><h3>2398 💎</h3><div class="price">$25330</div><button onclick="abrirModal('2398 💎 INFINITO','25330')">COMPRAR</button></div>
+<div class="card"><h3>6160 💎</h3><div class="price">$62350</div><button onclick="abrirModal('6160 💎 INFINITO','62350')">COMPRAR</button></div>
+</div>
+
+<div class="section-title">🎫 TARJETAS Y PASES</div>
+<div class="grid">
+<div class="card"><h3>Tarjeta Semanal Básica</h3><div class="price">$1450</div><button onclick="abrirModal('Tarjeta Semanal Básica','1450')">COMPRAR</button></div>
+<div class="card"><h3>Tarjeta Semanal</h3><div class="price">$3680</div><button onclick="abrirModal('Tarjeta Semanal','3680')">COMPRAR</button></div>
+<div class="card"><h3>Tarjeta Mensual</h3><div class="price">$14500</div><button onclick="abrirModal('Tarjeta Mensual','14500')">COMPRAR</button></div>
+<div class="card"><h3>Evo Pase 7 Días</h3><div class="price">$2500</div><button onclick="abrirModal('Evo Pase 7 Días','2500')">COMPRAR</button></div>
+<div class="card"><h3>Evo Pase 30 Días</h3><div class="price">$5900</div><button onclick="abrirModal('Evo Pase 30 Días','5900')">COMPRAR</button></div>
+<div class="card"><h3>Pase Booyah</h3><div class="price">$2500</div><button onclick="abrirModal('Pase Booyah','2500')">COMPRAR</button></div>
 </div>
 
 </div>
 
-<!-- MODAL -->
 <div class="modal" id="modal">
 <div class="modal-content">
 <div class="close" onclick="cerrarModal()">Cerrar ✖</div>
@@ -214,9 +226,7 @@ color:#555;
 </div>
 </div>
 
-<footer>
-© 2026 MAXI STORE
-</footer>
+<footer>© 2026 MAXI STORE</footer>
 
 <script>
 let producto="";
@@ -250,9 +260,8 @@ let mensaje=
 "🆔 ID: "+id+"\n"+
 "💳 Pago: "+metodo;
 
-let numero="5493865267742"; // Cambia por tu número
+let numero="5493865267742";
 let url="https://wa.me/"+numero+"?text="+encodeURIComponent(mensaje);
-
 window.open(url,'_blank');
 }
 </script>
