@@ -5,15 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VFG Store</title>
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 font-family:'Montserrat',sans-serif;
@@ -22,7 +17,6 @@ color:#fff;
 overflow-x:hidden;
 }
 
-/* Fondo animado gamer */
 body::before{
 content:"";
 position:fixed;
@@ -38,7 +32,6 @@ z-index:-1;
 100%{transform:translate(-25%,-25%) rotate(360deg);}
 }
 
-/* HEADER */
 header{
 text-align:center;
 padding:60px 20px 30px;
@@ -55,13 +48,8 @@ background:linear-gradient(90deg,#00f0ff,#ff00c8);
 margin-top:20px;
 }
 
-header p{
-opacity:0.7;
-margin-top:10px;
-font-size:14px;
-}
+header p{opacity:0.7;margin-top:10px;font-size:14px;}
 
-/* LOGO */
 .logo img{
 width:200px;
 filter:drop-shadow(0 0 15px #00f0ff);
@@ -73,14 +61,8 @@ transform:scale(1.08);
 filter:drop-shadow(0 0 25px #ff00c8);
 }
 
-/* CONTENEDOR */
-.container{
-width:90%;
-max-width:1200px;
-margin:40px auto;
-}
+.container{width:90%;max-width:1200px;margin:40px auto;}
 
-/* TITULOS */
 .section-title{
 font-family:'Orbitron',sans-serif;
 font-size:20px;
@@ -90,14 +72,12 @@ padding-left:12px;
 letter-spacing:2px;
 }
 
-/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
 }
 
-/* CARDS */
 .card{
 background:rgba(20,20,30,0.8);
 padding:25px;
@@ -109,33 +89,13 @@ position:relative;
 overflow:hidden;
 }
 
-.card::before{
-content:"";
-position:absolute;
-top:-50%;
-left:-50%;
-width:200%;
-height:200%;
-background:linear-gradient(60deg,transparent,#00f0ff40,transparent);
-transform:rotate(25deg);
-animation:shine 6s linear infinite;
-}
-
-@keyframes shine{
-0%{transform:translateX(-100%) rotate(25deg);}
-100%{transform:translateX(100%) rotate(25deg);}
-}
-
 .card:hover{
 transform:translateY(-8px);
 border:1px solid #00f0ff;
 box-shadow:0 0 20px #00f0ff50;
 }
 
-.card h3{
-font-size:18px;
-margin-bottom:10px;
-}
+.card h3{font-size:18px;margin-bottom:10px;}
 
 .price{
 font-size:20px;
@@ -144,7 +104,6 @@ margin-bottom:15px;
 color:#00f0ff;
 }
 
-/* BOTON GAMER */
 button{
 width:100%;
 padding:12px;
@@ -164,7 +123,6 @@ transform:scale(1.05);
 box-shadow:0 0 15px #ff00c8;
 }
 
-/* MODAL */
 .modal{
 display:none;
 position:fixed;
@@ -188,11 +146,6 @@ border:1px solid #00f0ff;
 animation:fadeIn 0.4s ease;
 }
 
-.modal-content h3{
-font-family:'Orbitron',sans-serif;
-margin-bottom:10px;
-}
-
 input, select{
 width:100%;
 padding:10px;
@@ -210,7 +163,6 @@ margin-bottom:10px;
 color:#aaa;
 }
 
-/* Animación entrada */
 @keyframes fadeIn{
 from{opacity:0; transform:translateY(20px);}
 to{opacity:1; transform:translateY(0);}
@@ -224,38 +176,49 @@ to{opacity:1; transform:translateY(0);}
 <div class="logo">
 <img src="logo.png">
 </div>
-<h1>VFG STORE</h1>
-<p>DIAMANTES & EXTRAS • ENTREGA INMEDIATA</p>
+<h1>RECARGAS FF 2026</h1>
+<p>ENTREGA INMEDIATA ⚡ 100% SEGURO</p>
 </header>
 
 <div class="container">
 
-<div class="section-title">PRECIOS DE STOCK ⚡</div>
-
+<div class="section-title">STOCK ⚡</div>
 <div class="grid">
 
-<div class="card">
-<h3>110 💎</h3>
-<div class="price">$1200 ARS</div>
-<button onclick="abrirModal('110 💎 Stock','1200')">COMPRAR</button>
-</div>
-
-<div class="card">
-<h3>341 💎</h3>
-<div class="price">$3800 ARS</div>
-<button onclick="abrirModal('341 💎 Stock','3800')">COMPRAR</button>
-</div>
-
-<div class="card">
-<h3>572 💎</h3>
-<div class="price">$5800 ARS</div>
-<button onclick="abrirModal('572 💎 Stock','5800')">COMPRAR</button>
-</div>
+<div class="card"><h3>110 💎</h3><div class="price">$1230 ARS</div><button onclick="abrirModal('110 💎 STOCK','1230')">COMPRAR</button></div>
+<div class="card"><h3>341 💎</h3><div class="price">$3700 ARS</div><button onclick="abrirModal('341 💎 STOCK','3700')">COMPRAR</button></div>
+<div class="card"><h3>572 💎</h3><div class="price">$5500 ARS</div><button onclick="abrirModal('572 💎 STOCK','5500')">COMPRAR</button></div>
+<div class="card"><h3>1166 💎</h3><div class="price">$10870 ARS</div><button onclick="abrirModal('1166 💎 STOCK','10870')">COMPRAR</button></div>
+<div class="card"><h3>2398 💎</h3><div class="price">$20370 ARS</div><button onclick="abrirModal('2398 💎 STOCK','20370')">COMPRAR</button></div>
+<div class="card"><h3>6160 💎</h3><div class="price">$51130 ARS</div><button onclick="abrirModal('6160 💎 STOCK','51130')">COMPRAR</button></div>
 
 </div>
+
+<div class="section-title">PRECIOS INFINITOS ♾️</div>
+<div class="grid">
+
+<div class="card"><h3>110 💎</h3><div class="price">$1780 ARS</div><button onclick="abrirModal('110 💎 INFINITO','1780')">COMPRAR</button></div>
+<div class="card"><h3>341 💎</h3><div class="price">$5500 ARS</div><button onclick="abrirModal('341 💎 INFINITO','5500')">COMPRAR</button></div>
+<div class="card"><h3>572 💎</h3><div class="price">$7760 ARS</div><button onclick="abrirModal('572 💎 INFINITO','7760')">COMPRAR</button></div>
+<div class="card"><h3>1166 💎</h3><div class="price">$13970 ARS</div><button onclick="abrirModal('1166 💎 INFINITO','13970')">COMPRAR</button></div>
+<div class="card"><h3>2398 💎</h3><div class="price">$25330 ARS</div><button onclick="abrirModal('2398 💎 INFINITO','25330')">COMPRAR</button></div>
+<div class="card"><h3>6160 💎</h3><div class="price">$62350 ARS</div><button onclick="abrirModal('6160 💎 INFINITO','62350')">COMPRAR</button></div>
+
 </div>
 
-<!-- MODAL -->
+<div class="section-title">TARJETAS Y PASES 🎫</div>
+<div class="grid">
+
+<div class="card"><h3>Tarjeta Semanal Básica</h3><div class="price">$1450 ARS</div><button onclick="abrirModal('Tarjeta Semanal Básica','1450')">COMPRAR</button></div>
+<div class="card"><h3>Tarjeta Semanal</h3><div class="price">$3680 ARS</div><button onclick="abrirModal('Tarjeta Semanal','3680')">COMPRAR</button></div>
+<div class="card"><h3>Tarjeta Mensual</h3><div class="price">$14500 ARS</div><button onclick="abrirModal('Tarjeta Mensual','14500')">COMPRAR</button></div>
+<div class="card"><h3>Evo Pase 7 Días</h3><div class="price">$2500 ARS</div><button onclick="abrirModal('Evo Pase 7 Días','2500')">COMPRAR</button></div>
+<div class="card"><h3>Evo Pase 30 Días</h3><div class="price">$5900 ARS</div><button onclick="abrirModal('Evo Pase 30 Días','5900')">COMPRAR</button></div>
+<div class="card"><h3>Pase Booyah</h3><div class="price">$2500 ARS</div><button onclick="abrirModal('Pase Booyah','2500')">COMPRAR</button></div>
+
+</div>
+</div>
+
 <div class="modal" id="modal">
 <div class="modal-content">
 <div class="close" onclick="cerrarModal()">X</div>
@@ -298,7 +261,7 @@ return;
 }
 
 let mensaje=
-"🛒 NUEVO PEDIDO\n"+
+"🛒 NUEVO PEDIDO RECARGAS FF 2026\n\n"+
 "💎 Producto: "+producto+"\n"+
 "💵 Precio: $"+precio+" ARS\n"+
 "🆔 ID: "+id+"\n"+
