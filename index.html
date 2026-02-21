@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VFG Store</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:radial-gradient(circle at top,#0f0f1a,#000);
+color:#fff;
+overflow-x:hidden;
+}
+
+/* Fondo animado gamer */
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:linear-gradient(45deg,#00f0ff20,#ff00c820,#00ff8820);
+animation:moverFondo 12s linear infinite;
+z-index:-1;
+}
+
+@keyframes moverFondo{
+0%{transform:translate(-25%,-25%) rotate(0deg);}
+100%{transform:translate(-25%,-25%) rotate(360deg);}
+}
+
+/* HEADER */
+header{
+text-align:center;
+padding:60px 20px 30px;
+animation:fadeIn 1s ease;
+}
+
+header h1{
+font-family:'Orbitron',sans-serif;
+font-size:36px;
+letter-spacing:4px;
+background:linear-gradient(90deg,#00f0ff,#ff00c8);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-top:20px;
+}
+
+header p{
+opacity:0.7;
+margin-top:10px;
+font-size:14px;
+}
+
+/* LOGO */
+.logo img{
+width:200px;
+filter:drop-shadow(0 0 15px #00f0ff);
+transition:0.4s;
+}
+
+.logo img:hover{
+transform:scale(1.08);
+filter:drop-shadow(0 0 25px #ff00c8);
+}
+
+/* CONTENEDOR */
+.container{
+width:90%;
+max-width:1200px;
+margin:40px auto;
+}
+
+/* TITULOS */
+.section-title{
+font-family:'Orbitron',sans-serif;
+font-size:20px;
+margin:60px 0 25px;
+border-left:4px solid #00f0ff;
+padding-left:12px;
+letter-spacing:2px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+/* CARDS */
+.card{
+background:rgba(20,20,30,0.8);
+padding:25px;
+border-radius:16px;
+border:1px solid #222;
+backdrop-filter:blur(10px);
+transition:0.3s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:linear-gradient(60deg,transparent,#00f0ff40,transparent);
+transform:rotate(25deg);
+animation:shine 6s linear infinite;
+}
+
+@keyframes shine{
+0%{transform:translateX(-100%) rotate(25deg);}
+100%{transform:translateX(100%) rotate(25deg);}
+}
+
+.card:hover{
+transform:translateY(-8px);
+border:1px solid #00f0ff;
+box-shadow:0 0 20px #00f0ff50;
+}
+
+.card h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.price{
+font-size:20px;
+font-weight:700;
+margin-bottom:15px;
+color:#00f0ff;
+}
+
+/* BOTON GAMER */
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:linear-gradient(90deg,#00f0ff,#ff00c8);
+color:#000;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+font-family:'Orbitron',sans-serif;
+letter-spacing:1px;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px #ff00c8;
+}
+
+/* MODAL */
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.modal-content{
+background:#111;
+padding:30px;
+border-radius:16px;
+width:90%;
+max-width:400px;
+border:1px solid #00f0ff;
+animation:fadeIn 0.4s ease;
+}
+
+.modal-content h3{
+font-family:'Orbitron',sans-serif;
+margin-bottom:10px;
+}
+
+input, select{
+width:100%;
+padding:10px;
+margin-top:10px;
+border-radius:8px;
+border:1px solid #333;
+background:#000;
+color:white;
+}
+
+.close{
+text-align:right;
+cursor:pointer;
+margin-bottom:10px;
+color:#aaa;
+}
+
+/* Animación entrada */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+<img src="logo.png">
+</div>
+<h1>VFG STORE</h1>
+<p>DIAMANTES & EXTRAS • ENTREGA INMEDIATA</p>
+</header>
+
+<div class="container">
+
+<div class="section-title">PRECIOS DE STOCK ⚡</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>110 💎</h3>
+<div class="price">$1200 ARS</div>
+<button onclick="abrirModal('110 💎 Stock','1200')">COMPRAR</button>
+</div>
+
+<div class="card">
+<h3>341 💎</h3>
+<div class="price">$3800 ARS</div>
+<button onclick="abrirModal('341 💎 Stock','3800')">COMPRAR</button>
+</div>
+
+<div class="card">
+<h3>572 💎</h3>
+<div class="price">$5800 ARS</div>
+<button onclick="abrirModal('572 💎 Stock','5800')">COMPRAR</button>
+</div>
+
+</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<div class="close" onclick="cerrarModal()">X</div>
+<h3>FINALIZAR PEDIDO</h3>
+<p id="productoSeleccionado"></p>
+<input type="text" id="playerID" placeholder="Ingrese ID del jugador">
+<select id="metodoPago">
+<option value="">Seleccione método de pago</option>
+<option>Transferencia</option>
+<option>Mercado Pago</option>
+<option>USDT</option>
+</select>
+<button onclick="enviarPedido()">ENVIAR PEDIDO</button>
+</div>
+</div>
+
+<script>
+let producto="";
+let precio="";
+
+function abrirModal(prod,pre){
+producto=prod;
+precio=pre;
+document.getElementById("productoSeleccionado").innerHTML=
+"<strong>Producto:</strong> "+prod+"<br><strong>Precio:</strong> $"+pre+" ARS";
+document.getElementById("modal").style.display="flex";
+}
+
+function cerrarModal(){
+document.getElementById("modal").style.display="none";
+}
+
+function enviarPedido(){
+let id=document.getElementById("playerID").value;
+let metodo=document.getElementById("metodoPago").value;
+
+if(id===""||metodo===""){
+alert("Complete todos los campos");
+return;
+}
+
+let mensaje=
+"🛒 NUEVO PEDIDO\n"+
+"💎 Producto: "+producto+"\n"+
+"💵 Precio: $"+precio+" ARS\n"+
+"🆔 ID: "+id+"\n"+
+"💳 Pago: "+metodo;
+
+let numero="5493435440092";
+let url="https://wa.me/"+numero+"?text="+encodeURIComponent(mensaje);
+window.open(url,'_blank');
+}
+</script>
+
+</body>
+</html>
