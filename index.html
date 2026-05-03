@@ -281,7 +281,7 @@ async function buscarPlayer() {
   status.innerHTML = "🔎 Buscando jugador...";
 
   try {
-    const res = await fetch(`https://suburban-salvador-incl-bunny.trycloudflare.com/api/player?uid=${uid}`);
+    const res = await fetch(`https://upon-frequency-ict-mitchell.trycloudflare.com/api/player?uid=${uid}`);
     const data = await res.json();
 
     if (data.status === "ok") {
