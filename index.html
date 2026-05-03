@@ -1,273 +1,324 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAXI STORE | Recargas Free Fire</title>
+<title>Diamond Store - Free Fire Pro</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-font-family:'Montserrat',sans-serif;
-background:#000;
-color:#fff;
-overflow-x:hidden;
+:root {
+  --ff-cyan: #00acc1;
+  --ff-cyan-glow: rgba(0, 172, 193, 0.4);
+  --dark-bg: #0d1117;
+  --card-bg: #161b22;
+  --border-color: #30363d;
+  --accent-gradient: linear-gradient(45deg, #ff3b3b, #ff7b00);
 }
 
-body::before{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background:radial-gradient(circle at top,#00bfff20,transparent 60%);
-z-index:-1;
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--dark-bg);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
-header{
-text-align:center;
-padding:35px 15px 10px;
+/* Fondo animado simple */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at center, #111e2d 0%, #0d1117 100%);
+  z-index: -1;
 }
 
-.logo{
-width:220px;
-height:110px;
-margin:auto;
-overflow:hidden;
+.container {
+  padding: 40px 15px;
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.logo img{
-width:100%;
-height:100%;
-object-fit:cover;
-filter:drop-shadow(0 0 15px #00bfff);
-}
-.subtitle{
-font-size:13px;
-letter-spacing:2px;
-color:#aaa;
-}
-
-.container{
-width:92%;
-max-width:1100px;
-margin:30px auto;
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  background: linear-gradient(to bottom, #ffffff, #888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.section-title{
-font-family:'Orbitron',sans-serif;
-font-size:20px;
-margin:50px 0 20px;
-color:#00bfff;
-letter-spacing:2px;
-text-shadow:0 0 8px #00bfff;
+/* Sección de Búsqueda */
+.search-section {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-gap:18px;
+@media (max-width: 480px) {
+  .search-section { flex-direction: column; }
 }
 
-.card{
-background:linear-gradient(145deg,#0a0f1a,#05080f);
-border:1px solid #0f2a40;
-padding:20px;
-border-radius:15px;
-transition:0.3s;
+.search-section input {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: #0d1117;
+  color: white;
+  outline: none;
+  font-size: 1rem;
 }
 
-.card:hover{
-transform:translateY(-6px);
-border:1px solid #00bfff;
-box-shadow:0 0 20px #00bfff40;
+.search-section input:focus {
+  border-color: var(--ff-cyan);
+  box-shadow: 0 0 15px var(--ff-cyan-glow);
 }
 
-.card h3{
-font-family:'Orbitron';
-font-size:17px;
-margin-bottom:8px;
+.btn-verify {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 12px;
+  background: var(--accent-gradient);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.price{
-font-size:19px;
-font-weight:700;
-color:#00d4ff;
-margin-bottom:12px;
+.btn-verify:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
 }
 
-button{
-width:100%;
-padding:10px;
-border:none;
-border-radius:10px;
-background:linear-gradient(90deg,#00bfff,#008cff);
-color:white;
-font-weight:700;
-cursor:pointer;
-transition:0.3s;
-font-family:'Orbitron';
+#status-msg {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--ff-cyan);
+  min-height: 1.5em;
 }
 
-button:hover{
-transform:scale(1.05);
-box-shadow:0 0 12px #00bfff;
+/* Selector de Pago */
+#payment-area {
+  display: none;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 400px;
 }
 
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
-z-index:9999;
+.payment-select {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  background: #161b22;
+  color: white;
+  border: 1px solid var(--border-color);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  outline: none;
 }
 
-.modal-content{
-background:#0a0f1a;
-padding:25px;
-border-radius:15px;
-width:90%;
-max-width:350px;
-border:1px solid #00bfff;
+/* Grid de Diamantes */
+.diamond-grid {
+  display: none; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  width: 100%;
+  max-width: 1000px;
 }
 
-.modal-content h3{
-font-family:'Orbitron';
-margin-bottom:10px;
-color:#00d4ff;
+.diamond-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: 0.3s;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-input,select{
-width:100%;
-padding:8px;
-margin-top:10px;
-border-radius:8px;
-border:1px solid #0f2a40;
-background:#000;
-color:white;
+.diamond-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--ff-cyan);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.close{
-text-align:right;
-cursor:pointer;
-color:#aaa;
-margin-bottom:8px;
-font-size:14px;
+.amount-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  margin: 10px 0;
 }
 
-footer{
-text-align:center;
-margin:50px 0 20px;
-font-size:12px;
-color:#555;
+.price-text {
+  font-size: 1.5rem;
+  color: #4caf50;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.btn-buy {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: var(--ff-cyan);
+  color: white;
+  font-family: 'Orbitron';
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-buy:hover {
+  background: #008b9c;
+  box-shadow: 0 0 15px var(--ff-cyan-glow);
 }
 </style>
 </head>
-
 <body>
 
-<header>
-<div class="logo">
-<img src="logo1.png" alt="MAXI STORE">
-</div>
-<div class="subtitle">RECARGAS FREE FIRE • ENTREGA INMEDIATA ⚡</div>
-</header>
-
 <div class="container">
+  <h1 class="title">RECARGA DIAMANTES</h1>
 
-<div class="section-title">💎 DIAMANTES STOCK</div>
-<div class="grid">
-<div class="card"><h3>110 💎</h3><div class="price">$1230</div><button onclick="abrirModal('110 💎 STOCK','1230')">COMPRAR</button></div>
-<div class="card"><h3>341 💎</h3><div class="price">$3700</div><button onclick="abrirModal('341 💎 STOCK','3700')">COMPRAR</button></div>
-<div class="card"><h3>572 💎</h3><div class="price">$5500</div><button onclick="abrirModal('572 💎 STOCK','5500')">COMPRAR</button></div>
-<div class="card"><h3>1166 💎</h3><div class="price">$10870</div><button onclick="abrirModal('1166 💎 STOCK','10870')">COMPRAR</button></div>
-<div class="card"><h3>2398 💎</h3><div class="price">$20370</div><button onclick="abrirModal('2398 💎 STOCK','20370')">COMPRAR</button></div>
-<div class="card"><h3>6160 💎</h3><div class="price">$51130</div><button onclick="abrirModal('6160 💎 STOCK','51130')">COMPRAR</button></div>
-</div>
+  <!-- BUSCADOR -->
+  <div class="search-section">
+    <input type="text" id="uid" placeholder="Ingresa tu ID de Jugador">
+    <button class="btn-verify" onclick="buscarPlayer()">VERIFICAR</button>
+  </div>
 
-<div class="section-title">♾️ PRECIOS INFINITOS</div>
-<div class="grid">
-<div class="card"><h3>110 💎</h3><div class="price">$1780</div><button onclick="abrirModal('110 💎 INFINITO','1780')">COMPRAR</button></div>
-<div class="card"><h3>341 💎</h3><div class="price">$5500</div><button onclick="abrirModal('341 💎 INFINITO','5500')">COMPRAR</button></div>
-<div class="card"><h3>572 💎</h3><div class="price">$7760</div><button onclick="abrirModal('572 💎 INFINITO','7760')">COMPRAR</button></div>
-<div class="card"><h3>1166 💎</h3><div class="price">$13970</div><button onclick="abrirModal('1166 💎 INFINITO','13970')">COMPRAR</button></div>
-<div class="card"><h3>2398 💎</h3><div class="price">$25330</div><button onclick="abrirModal('2398 💎 INFINITO','25330')">COMPRAR</button></div>
-<div class="card"><h3>6160 💎</h3><div class="price">$62350</div><button onclick="abrirModal('6160 💎 INFINITO','62350')">COMPRAR</button></div>
-</div>
+  <div id="status-msg"></div>
 
-<div class="section-title">🎫 TARJETAS Y PASES</div>
-<div class="grid">
-<div class="card"><h3>Tarjeta Semanal Básica</h3><div class="price">$1450</div><button onclick="abrirModal('Tarjeta Semanal Básica','1450')">COMPRAR</button></div>
-<div class="card"><h3>Tarjeta Semanal</h3><div class="price">$3680</div><button onclick="abrirModal('Tarjeta Semanal','3680')">COMPRAR</button></div>
-<div class="card"><h3>Tarjeta Mensual</h3><div class="price">$14500</div><button onclick="abrirModal('Tarjeta Mensual','14500')">COMPRAR</button></div>
-<div class="card"><h3>Evo Pase 7 Días</h3><div class="price">$2500</div><button onclick="abrirModal('Evo Pase 7 Días','2500')">COMPRAR</button></div>
-<div class="card"><h3>Evo Pase 30 Días</h3><div class="price">$5900</div><button onclick="abrirModal('Evo Pase 30 Días','5900')">COMPRAR</button></div>
-<div class="card"><h3>Pase Booyah</h3><div class="price">$2500</div><button onclick="abrirModal('Pase Booyah','2500')">COMPRAR</button></div>
-</div>
+  <!-- MÉTODO DE PAGO -->
+  <div id="payment-area">
+    <label style="display:block; margin-bottom:10px; font-family:'Orbitron'; font-size:0.7rem; color:var(--ff-cyan); letter-spacing:2px;">SELECCIONA TU PAGO</label>
+    <select id="metodo_pago" class="payment-select">
+      <option value="" disabled selected>Elegir método de pago...</option>
+      <option value="Transferencia / Mercado Pago">Transferencia / Mercado Pago</option>
+      <option value="Efectivo (Pagofacil/Rapipago)">Efectivo (Rapipago / Pagofacil)</option>
+      <option value="Ualá / Otros">Ualá / Otros</option>
+    </select>
+  </div>
 
-</div>
+  <!-- GRILLA DE PRODUCTOS -->
+  <div id="diamond-grid" class="diamond-grid">
 
-<div class="modal" id="modal">
-<div class="modal-content">
-<div class="close" onclick="cerrarModal()">Cerrar ✖</div>
-<h3>FINALIZAR PEDIDO</h3>
-<p id="productoSeleccionado"></p>
-<input type="text" id="playerID" placeholder="Ingrese ID del jugador">
-<select id="metodoPago">
-<option value="">Método de pago</option>
-<option>Transferencia</option>
-<option>Mercado Pago</option>
-<option>USDT</option>
-</select>
-<button onclick="enviarPedido()">ENVIAR PEDIDO</button>
-</div>
-</div>
+    <div class="diamond-card">
+      <div class="amount-text">110 💎</div>
+      <div class="price-text">$1.500</div>
+      <button class="btn-buy" onclick="comprar(110, 1500)">COMPRAR</button>
+    </div>
 
-<footer>© 2026 MAXI STORE</footer>
+    <div class="diamond-card">
+      <div class="amount-text">341 💎</div>
+      <div class="price-text">$3.600</div>
+      <button class="btn-buy" onclick="comprar(341, 3600)">COMPRAR</button>
+    </div>
+
+    <div class="diamond-card">
+      <div class="amount-text">572 💎</div>
+      <div class="price-text">$5.800</div>
+      <button class="btn-buy" onclick="comprar(572, 5800)">COMPRAR</button>
+    </div>
+
+    <div class="diamond-card">
+      <div class="amount-text">1166 💎</div>
+      <div class="price-text">$11.500</div>
+      <button class="btn-buy" onclick="comprar(1166, 11500)">COMPRAR</button>
+    </div>
+
+    <div class="diamond-card">
+      <div class="amount-text">2398 💎</div>
+      <div class="price-text">$19.800</div>
+      <button class="btn-buy" onclick="comprar(2398, 19800)">COMPRAR</button>
+    </div>
+
+    <div class="diamond-card">
+      <div class="amount-text">6160 💎</div>
+      <div class="price-text">$47.000</div>
+      <button class="btn-buy" onclick="comprar(6160, 47000)">COMPRAR</button>
+    </div>
+
+  </div>
+</div>
 
 <script>
-let producto="";
-let precio="";
+async function buscarPlayer() {
+  const uid = document.getElementById("uid").value.trim();
+  const status = document.getElementById("status-msg");
+  const grid = document.getElementById("diamond-grid");
+  const paymentArea = document.getElementById("payment-area");
 
-function abrirModal(prod,pre){
-producto=prod;
-precio=pre;
-document.getElementById("productoSeleccionado").innerHTML=
-"<strong>Producto:</strong> "+prod+"<br><strong>Precio:</strong> $"+pre;
-document.getElementById("modal").style.display="flex";
+  if (!uid) {
+    status.innerHTML = "❌ Escribe tu ID primero";
+    return;
+  }
+
+  status.innerHTML = "🔎 Buscando jugador...";
+
+  try {
+    const res = await fetch(`https://suburban-salvador-incl-bunny.trycloudflare.com/api/player?uid=${uid}`);
+    const data = await res.json();
+
+    if (data.status === "ok") {
+      status.setAttribute("data-nickname", data.nickname);
+      status.innerHTML = `✅ Bienvenido: <span style="color:#fff">${data.nickname}</span>`;
+      grid.style.display = "grid";
+      paymentArea.style.display = "block";
+    } else {
+      status.innerHTML = "❌ ID no válido";
+      grid.style.display = "none";
+      paymentArea.style.display = "none";
+    }
+  } catch {
+    status.innerHTML = "⚠️ Error de conexión";
+  }
 }
 
-function cerrarModal(){
-document.getElementById("modal").style.display="none";
-}
+function comprar(cantidad, precio) {
+  const uid = document.getElementById("uid").value;
+  const nickname = document.getElementById("status-msg").getAttribute("data-nickname") || "Jugador";
+  const metodo = document.getElementById("metodo_pago").value;
 
-function enviarPedido(){
-let id=document.getElementById("playerID").value;
-let metodo=document.getElementById("metodoPago").value;
+  if (!metodo) {
+    alert("⚠️ Por favor selecciona un método de pago.");
+    document.getElementById("metodo_pago").focus();
+    return;
+  }
 
-if(id===""||metodo===""){
-alert("Complete todos los campos");
-return;
-}
+  const mensaje = `💎 *NUEVO PEDIDO*
+👤 *Jugador:* ${nickname}
+🆔 *ID:* ${uid}
+📦 *Paquete:* ${cantidad} Diamantes
+💰 *Total:* $${precio}
+💳 *Pago:* ${metodo}`;
 
-let mensaje=
-"🛒 NUEVO PEDIDO MAXI STORE\n\n"+
-"💎 Producto: "+producto+"\n"+
-"💵 Precio: $"+precio+"\n"+
-"🆔 ID: "+id+"\n"+
-"💳 Pago: "+metodo;
-
-let numero="5493865267742";
-let url="https://wa.me/"+numero+"?text="+encodeURIComponent(mensaje);
-window.open(url,'_blank');
+  const url = `https://wa.me/5493517016162?text=${encodeURIComponent(mensaje)}`;
+  window.open(url, '_blank');
 }
 </script>
 
