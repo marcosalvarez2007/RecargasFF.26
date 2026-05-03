@@ -232,7 +232,7 @@ body::before {
   <div id="payment-area">
     <select id="metodo_pago" class="payment-select">
       <option value="" disabled selected>Selecciona tu forma de pago...</option>
-      <option value="Transferencia / Mercado Pago">Transferencia / Mercado Pago</option>
+      <option value="Transferencia / Mercado Pago">Transferencia / Mercado Pago / Alias o Cvu</option>
       <option value="Yape / Plin">Yape / Plin</option>
       <option value="Efectivo">Efectivo</option>
       <option value="Cripto / USDT">Cripto - USDT</option>
@@ -249,12 +249,12 @@ body::before {
 let currentCountry = 'arg';
 
 const packages = [
-  { qty: 110, arg: 1200, per: 3 },
-  { qty: 341, arg: 3600, per: 8.6 },
-  { qty: 572, arg: 5800, per: 13.6 },
-  { qty: 1166, arg: 11500, per: 27 },
-  { qty: 2398, arg: 19800, per: 49 },
-  { qty: 6160, arg: 47000, per: 117 }
+  { qty: 110, arg: 1.200, per: 3 },
+  { qty: 341, arg: 3.600, per: 8.6 },
+  { qty: 572, arg: 5.800, per: 13.6 },
+  { qty: 1166, arg: 11.500, per: 27 },
+  { qty: 2398, arg: 19.800, per: 49 },
+  { qty: 6160, arg: 47.000, per: 117 }
 ];
 
 function renderPackages() {
