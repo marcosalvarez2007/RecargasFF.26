@@ -244,37 +244,48 @@ body::before {
     <!-- Se genera con JavaScript -->
   </div>
 </div>
-
 <script>
 let currentCountry = 'arg';
 
 const packages = [
-  { qty: 110, arg: 1.200, per: 3 },
-  { qty: 341, arg: 3.600, per: 8.6 },
-  { qty: 572, arg: 5.800, per: 13.6 },
-  { qty: 1166, arg: 11.500, per: 27 },
-  { qty: 2398, arg: 19.800, per: 49 },
-  { qty: 6160, arg: 47.000, per: 117 }
+  { qty: 110, arg: 1200, per: 3 },
+  { qty: 341, arg: 3600, per: 8.6 },
+  { qty: 572, arg: 5800, per: 13.6 },
+  { qty: 1166, arg: 11500, per: 27 },
+  { qty: 2398, arg: 19800, per: 49 },
+  { qty: 6160, arg: 47000, per: 117 }
 ];
+
+// ESTA ES LA FUNCIÓN QUE DEBES PEGAR
+function formatNumber(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
 
 function renderPackages() {
   const grid = document.getElementById('diamond-grid');
   grid.innerHTML = '';
   
   packages.forEach(pkg => {
-    const price = currentCountry === 'arg' ? `$${pkg.arg.toLocaleString()}` : `S/ ${pkg.per}`;
-    const rawPrice = currentCountry === 'arg' ? pkg.arg : pkg.per;
+    let priceLabel;
+    if (currentCountry === 'arg') {
+      // Ahora usará el punto forzado
+      priceLabel = `$${formatNumber(pkg.arg)}`;
+    } else {
+      // Para Perú mantenemos el punto en los decimales
+      priceLabel = `S/ ${pkg.per.toString().replace(',', '.')}`;
+    }
     
     grid.innerHTML += `
       <div class="diamond-card">
         <div class="amount-text">${pkg.qty} 💎</div>
-        <div class="price-text">${price}</div>
-        <button class="btn-buy" onclick="comprar(${pkg.qty}, '${price}')">COMPRAR</button>
+        <div class="price-text">${priceLabel}</div>
+        <button class="btn-buy" onclick="comprar(${pkg.qty}, '${priceLabel}')">COMPRAR</button>
       </div>
     `;
   });
 }
 
+// ... resto del código igua
 function setCountry(country) {
   currentCountry = country;
   document.getElementById('btn-arg').classList.toggle('active', country === 'arg');
